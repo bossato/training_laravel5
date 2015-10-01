@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Tokyo',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -136,6 +136,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Illuminate\Hashing\HashServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
+        Illuminate\Mail\MailServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -173,8 +176,10 @@ return [
         'Eloquent'  => Illuminate\Database\Eloquent\Model::class,
         'Event'     => Illuminate\Support\Facades\Event::class,
         'File'      => Illuminate\Support\Facades\File::class,
+        'Form'      => Illuminate\Html\FormFacade::class,
         'Gate'      => Illuminate\Support\Facades\Gate::class,
         'Hash'      => Illuminate\Support\Facades\Hash::class,
+        'HTML'      => Illuminate\Html\HtmlFacade::class,
         'Input'     => Illuminate\Support\Facades\Input::class,
         'Inspiring' => Illuminate\Foundation\Inspiring::class,
         'Lang'      => Illuminate\Support\Facades\Lang::class,

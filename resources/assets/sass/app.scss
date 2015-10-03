@@ -1,2 +1,17 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@mixin margin-padding($margin: 0, $padding: 0) {
+  margin:  $margin;
+  padding: $padding;
+}
+
+nav {
+  width: 100%;
+  @include margin-padding();
+
+  ul {
+    li {
+      display: inline-block;
+    }
+  }
+}

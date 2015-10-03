@@ -22,6 +22,10 @@ class ArticlesController extends Controller
         $this->article = $article;
     }
  
+    /**
+     * @param  Article $article
+     * @return \Illuminate\View\View
+     */
     public function getIndex()
     {
         $articles = $this->article->all();
@@ -29,6 +33,10 @@ class ArticlesController extends Controller
         return view('articles.index')->with(compact('articles'));
     }
  
+    /**
+     * @param  $id
+     * @return \Illuminate\View\View
+     */
     public function getShow($id)
     {
         $article = $this->article->find($id);
@@ -36,14 +44,25 @@ class ArticlesController extends Controller
         return view('articles.show')->with(compact('article'));
     }
  
+    /**
+     * @return \Illuminate\View\View
+     */
     public function getCreate()
     {
- 
+        return view('articles.create');
     }
 
-    public function postCreate()
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postCreate(Request $request)
     {
+        $form_data = $request->all();
+        $this->article->fill($form_data);
+        $this->article->save();
  
+        return redirect()->to('articles/index');
     }
 
     public function getEdit()
